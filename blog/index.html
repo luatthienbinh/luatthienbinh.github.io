@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Blog | Luật Thiên Bình Support Site</title>
+<meta content="Trang tổng hợp blog chỉ dùng để điều hướng chuyên mục." name="description"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<div class="container nav-wrap">
+<a class="brand" href="../">Trung tâm thông tin dịch vụ pháp lý</a>
+<button aria-controls="site-menu" aria-expanded="false" class="nav-toggle" type="button"><span></span><span></span><span></span><span class="sr-only">Mở menu điều hướng</span></button>
+<nav class="main-nav" id="site-menu"><a class="" href="../">Trang chủ</a><a class="" href="../gioi-thieu/">Giới thiệu</a><a class="" href="../dich-vu/">Dịch vụ</a><a class="active" href="./">Blog</a><a class="" href="../lien-he/">Liên hệ</a></nav>
+</div>
+</header>
+<div class="breadcrumb"><a href="../">Trang chủ</a> / <span>Blog</span></div>
+<main class="container"><section class="hero"><div class="hero-tag">Blog</div><h1>Khu vực blog chỉ làm nhiệm vụ điều hướng xuống category</h1><p class="lead">Hiện tại khu vực blog được dựng khung để giữ cấu trúc site đúng chuẩn. Các category đều dùng internal link, chưa dùng như điểm đặt backlink chính.</p></section><section class="panel"><h2>Chuyên mục nội dung</h2><div class="grid cards-3"><a class="card link-card" href="doanh-nghiep/"><h3>Doanh nghiệp</h3><p>Bài viết định hướng xoay quanh thành lập, vận hành và thay đổi thông tin doanh nghiệp.</p></a><a class="card link-card" href="giay-phep/"><h3>Giấy phép</h3><p>Nhóm bài viết nền tảng về hồ sơ, điều kiện và các lưu ý khi xin giấy phép chuyên ngành.</p></a><a class="card link-card" href="so-huu-tri-tue/"><h3>Sở hữu trí tuệ</h3><p>Nhóm bài viết về nhãn hiệu, hồ sơ đăng ký và quản trị quyền sở hữu trí tuệ.</p></a><a class="card link-card" href="dat-dai-hon-nhan-thua-ke/"><h3>Đất đai, hôn nhân, thừa kế</h3><p>Nhóm bài viết nền tảng cho người cần tư vấn cá nhân, tranh chấp hoặc rà soát hồ sơ.</p></a><a class="card link-card" href="ke-toan-van-hanh/"><h3>Kế toán và vận hành</h3><p>Nhóm bài viết dành cho doanh nghiệp cần chuẩn hóa quy trình chứng từ, chữ ký số và hồ sơ làm việc.</p></a></div></section></main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<div class="footer-title">Trung tâm thông tin dịch vụ pháp lý</div>
+<p>Site hỗ trợ cấu trúc nội dung theo tầng: trang điều hướng chỉ internal link, trang dịch vụ cụ thể mới đặt backlink tham khảo theo đúng ngữ cảnh.</p>
+</div>
+<div>
+<div class="footer-title">Điều hướng</div>
+<ul>
+<li><a href="../">Trang chủ</a></li>
+<li><a href="../gioi-thieu/">Giới thiệu</a></li>
+<li><a href="../dich-vu/">Dịch vụ</a></li>
+<li><a href="./">Blog</a></li>
+<li><a href="../lien-he/">Liên hệ</a></li>
+</ul>
+</div>
+<div>
+<div class="footer-title">Nhóm dịch vụ</div>
+<ul>
+<li><a href="../dich-vu/thanh-lap-doanh-nghiep/">Thành lập doanh nghiệp</a></li>
+<li><a href="../dich-vu/thay-doi-dang-ky/">Thay đổi đăng ký</a></li>
+<li><a href="../dich-vu/tam-ngung-giai-the/">Tạm ngừng &amp; giải thể</a></li>
+<li><a href="../dich-vu/giay-phep-kinh-doanh/">Giấy phép</a></li>
+</ul>
+</div>
+</div>
+<div class="container footer-bottom">Luật Thiên Bình • Số liên hệ tham khảo: 0869 200 998</div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".site-header").forEach(function(header){var btn=header.querySelector(".nav-toggle");var nav=header.querySelector(".main-nav");if(!btn||!nav)return;var closeMenu=function(){header.classList.remove("menu-open");btn.setAttribute("aria-expanded","false")};btn.addEventListener("click",function(){var open=header.classList.toggle("menu-open");btn.setAttribute("aria-expanded",open?"true":"false")});nav.querySelectorAll("a").forEach(function(link){link.addEventListener("click",function(){if(window.innerWidth<=860)closeMenu()})});window.addEventListener("resize",function(){if(window.innerWidth>860)closeMenu()})})});
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "count_rows_in_workbook": 31,
+  "count_service_pages_with_backlink": 30,
+  "count_hub_rows_without_backlink": 1,
+  "groups": {
+    "Thành lập doanh nghiệp": 9,
+    "Thay đổi đăng ký kinh doanh": 8,
+    "Tạm ngừng và giải thể": 4,
+    "Giấy phép kinh doanh chuyên ngành": 3,
+    "Kế toán và chữ ký số": 2,
+    "Nhãn hiệu và sở hữu trí tuệ": 1,
+    "Luật sư tư vấn dân sự và tranh chấp": 3
+  },
+  "blog_categories": 5,
+  "blog_posts_added": 15,
+  "blog_posts_per_category": {
+    "Doanh nghiệp": 3,
+    "Giấy phép": 3,
+    "Sở hữu trí tuệ": 3,
+    "Đất đai, hôn nhân, thừa kế": 3,
+    "Kế toán và vận hành": 3
+  }
+}
