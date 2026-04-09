@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trang không tìm thấy | Luật Thiên Bình</title>
+<meta name="robots" content="noindex"/>
+<link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
+<link href="/assets/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/">Luật Thiên Bình</a>
+    <button aria-controls="site-menu" aria-expanded="false" class="nav-toggle" type="button">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Mở menu điều hướng</span>
+    </button>
+    <nav class="main-nav" id="site-menu">
+      <a href="/">Trang chủ</a>
+      <a href="/gioi-thieu/">Giới thiệu</a>
+      <a href="/dich-vu/">Dịch vụ</a>
+      <a href="/blog/">Bài viết</a>
+      <a href="/lien-he/">Liên hệ</a>
+    </nav>
+    <a href="tel:0869200998" class="nav-badge">📞 0869 200 998</a>
+  </div>
+</header>
+
+<main class="container" style="text-align:center;padding:80px 20px;">
+  <div style="font-size:4rem;margin-bottom:16px;">⚖️</div>
+  <h1 style="font-size:2rem;margin-bottom:12px;">Trang không tìm thấy</h1>
+  <p style="color:#666;margin-bottom:32px;">Trang bạn truy cập không tồn tại hoặc đã được di chuyển.<br/>Vui lòng kiểm tra lại đường dẫn hoặc quay về trang chủ.</p>
+  <div class="actions">
+    <a href="/" class="btn">🏠 Về trang chủ</a>
+    <a href="/dich-vu/" class="btn-ghost">Xem dịch vụ</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-bottom">
+    <span>© Luật Thiên Bình • Hỗ trợ pháp lý cho doanh nghiệp và cá nhân trên phạm vi toàn quốc</span>
+    <span>TP. Hồ Chí Minh</span>
+  </div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  document.querySelectorAll(".site-header").forEach(function(header){
+    var btn=header.querySelector(".nav-toggle");
+    var nav=header.querySelector(".main-nav");
+    if(!btn||!nav)return;
+    var closeMenu=function(){header.classList.remove("menu-open");btn.setAttribute("aria-expanded","false")};
+    btn.addEventListener("click",function(){var open=header.classList.toggle("menu-open");btn.setAttribute("aria-expanded",open?"true":"false")});
+    nav.querySelectorAll("a").forEach(function(link){link.addEventListener("click",function(){if(window.innerWidth<=860)closeMenu()})});
+    window.addEventListener("resize",function(){if(window.innerWidth>860)closeMenu()})
+  })
+});
+</script>
+</body>
+</html>
