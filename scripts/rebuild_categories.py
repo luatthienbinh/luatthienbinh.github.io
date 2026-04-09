@@ -217,6 +217,59 @@ def scan_category(category_path: Path, parent_folder: str) -> list:
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
+# ─── Rebuild sitemap.xml ─────────────────────────────────────────────────────
+
+BASE_URL = "https://luatthienbinh.com"  # ← đổi nếu dùng domain khác
+
+# Ưu tiên URL: trang chủ cao nhất, category trung bình, bài viết bình thường
+def get_priority(rel_parts: tuple) -> str:
+    depth = len(rel_parts)
+    if depth == 0:
+        return "1.0"
+    if depth == 1:
+        return "0.9"
+    if depth == 2:
+        return "0.8"
+    return "0.7"
+
+def rebuild_sitemap():
+    sitemap_file = ROOT / "sitemap.xml"
+    urls = []
+
+    for html_file in sorted(ROOT.rglob("index.html")):
+        # Bỏ qua file trong scripts/ hay .github/
+        rel = html_file.relative_to(ROOT)
+        if rel.parts[0] in ("scripts", ".github"):
+            continue
+
+        # Tính URL canonical
+        path_parts = rel.parts[:-1]  # bỏ "index.html"
+        if path_parts:
+            url = BASE_URL + "/" + "/".join(path_parts) + "/"
+        else:
+            url = BASE_URL + "/"
+
+        priority = get_priority(path_parts)
+        urls.append((url, priority))
+
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>']
+    lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+    for url, priority in urls:
+        lines.append(
+            f'  <url>'
+            f'<loc>{url}</loc>'
+            f'<changefreq>monthly</changefreq>'
+            f'<priority>{priority}</priority>'
+            f'</url>'
+        )
+    lines.append('</urlset>')
+
+    sitemap_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"\n🗺  sitemap.xml — đã cập nhật {len(urls)} URL")
+
+
+# ─── Main ─────────────────────────────────────────────────────────────────────
+
 def main():
     changed = 0
     errors  = 0
@@ -260,6 +313,8 @@ def main():
             except Exception as e:
                 print(f"  ✗ Lỗi khi cập nhật {category_dir}: {e}")
                 errors += 1
+
+    rebuild_sitemap()
 
     print(f"\n{'='*50}")
     print(f"✅ Hoàn tất — {changed} category đã cập nhật, {errors} lỗi.")
